@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Tehzeeba 💕</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;
+  background:#fff7fb;color:#513744;overflow-x:hidden
+}
+button,a{font:inherit}
+a{text-decoration:none}
+#welcome{
+  position:fixed;inset:0;z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:25px;
+  background:linear-gradient(135deg,#f7c6dc,#ead6f7,#ffdce8);
+  transition:1s
+}
+#welcome.hide{opacity:0;visibility:hidden}
+.welcome-box{max-width:650px}
+.welcome-box .emoji{font-size:60px;animation:pulse 1.5s infinite}
+.welcome-box small{letter-spacing:4px;color:#80556a}
+.welcome-box h1{
+  font-family:cursive;font-size:clamp(55px,12vw,100px);
+  color:#c65380;margin:15px 0
+}
+.welcome-box p{line-height:1.8;margin:20px auto 30px;max-width:560px}
+.btn{
+  border:0;border-radius:40px;padding:15px 26px;
+  background:#c65380;color:#fff;font-weight:bold;
+  cursor:pointer;box-shadow:0 10px 25px #c6538038;
+  transition:.3s
+}
+.btn:hover{transform:translateY(-3px)}
+#site{display:none}
+#site.show{display:block}
+.hero{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;padding:40px 20px;
+  background:linear-gradient(135deg,#a96d8b,#665277)
+}
+.hero-content{max-width:850px}
+.hero .tiny{letter-spacing:5px;font-size:12px}
+.hero h1{font-family:cursive;font-size:clamp(60px,12vw,125px);line-height:.9;margin:20px 0}
+.hero h1 span{display:block;color:#ffd0e1}
+.hero p{line-height:1.8;max-width:650px;margin:25px auto}
+.nav{
+  position:sticky;top:0;z-index:1000;background:#ffffffed;
+  backdrop-filter:blur(12px);display:flex;gap:22px;
+  justify-content:center;padding:14px;overflow-x:auto
+}
+.nav a{color:#674554;font-size:13px;white-space:nowrap}
+.nav a:hover{color:#c65380}
+section{padding:85px 6%}
+.heading{text-align:center;margin-bottom:45px}
+.heading .icon{font-size:38px}
+.heading small{display:block;letter-spacing:4px;color:#b05d7c;margin:10px}
+.heading h2{font-family:cursive;font-size:clamp(45px,8vw,75px)}
+.heading h2 span{color:#c65380}
+.card{
+  max-width:850px;margin:auto;background:#fff;padding:45px;
+  border-radius:25px;box-shadow:0 15px 50px #68455712;
+  line-height:1.9
+}
+.card p{margin-bottom:18px}
+.signature{text-align:right;color:#a65376}
+#cake{text-align:center;background:#fff}
+.cake-box{height:300px;width:320px;margin:auto;position:relative}
+.cake{
+  position:absolute;bottom:35px;left:30px;width:260px
+}
+.layer{height:55px;border-radius:12px;background:#dc7e9e;margin-bottom:3px}
+.layer.top{height:75px;background:#f2aac3;border-radius:22px 22px 12px 12px}
+.plate{height:15px;background:#d4c0c9;border-radius:50%;margin-top:2px}
+.candles{
+  position:absolute;top:15px;left:70px;right:70px;
+  display:flex;justify-content:space-between;z-index:2
+}
+.candle{
+  width:14px;height:65px;
+  background:repeating-linear-gradient(45deg,#fff 0 5px,#df7098 5px 10px);
+  border-radius:5px;position:relative
+}
+.flame{
+  position:absolute;top:-25px;left:-2px;width:18px;height:25px;
+  background:#ffc857;border-radius:50%;box-shadow:0 0 20px #ffc857;
+  animation:flicker .6s infinite alternate
+}
+.candle.off .flame{display:none}
+#wish{font-family:cursive;color:#c65380;font-size:30px;margin:20px}
+.dua{
+  background:linear-gradient(135deg,#49364f,#79566d);color:#fff
+}
+.dua .heading small{color:#ffc3d8}
+.dua .heading h2{color:#fff}
+.dua-card{
+  max-width:850px;margin:auto;text-align:center;padding:45px;
+  border-radius:28px;background:#ffffff12;border:1px solid #ffffff25;
+  line-height:2
+}
+.arabic{font-size:21px;direction:rtl;margin:25px 0}
+.dua-card p{margin:18px 0;color:#f9e8ef}
+.wishes{background:#fff}
+.grid{
+  max-width:1000px;margin:auto;display:grid;
+  grid-template-columns:repeat(3,1fr);gap:20px
+}
+.wish{
+  padding:30px 20px;text-align:center;background:#fff7fb;
+  border:1px solid #f4dce7;border-radius:20px;transition:.3s
+}
+.wish:hover{transform:translateY(-7px)}
+.wish div{font-size:35px}.wish h3{margin:12px}.wish p{font-size:13px;line-height:1.7}
+.memories{background:#fff2f7}
+.gallery{
+  max-width:1000px;margin:auto;display:grid;
+  grid-template-columns:repeat(4,1fr);gap:18px
+}
+.memory{
+  height:240px;border-radius:20px;display:flex;
+  align-items:center;justify-content:center;text-align:center;
+  padding:15px;background:linear-gradient(135deg,#f4bdd2,#ead7f1);
+  font-size:17px;box-shadow:0 10px 25px #68455712
+}
+.surprise{
+  text-align:center;background:linear-gradient(135deg,#f9d5e3,#eed0ef)
+}
+.surprise h2{font-family:cursive;font-size:clamp(48px,8vw,80px);margin:15px}
+.surprise h2 span{color:#c65380}
+.hidden{display:none;margin:35px auto 0;max-width:700px;background:#fff;padding:35px;border-radius:25px;line-height:1.8}
+.hidden.show{display:block;animation:appear .7s}
+.hidden .heart{font-size:65px}
+footer{text-align:center;background:#35283a;color:#eadce5;padding:30px;font-size:13px;line-height:2}
+.heart{
+  position:fixed;bottom:-30px;z-index:9998;pointer-events:none;
+  animation:float 5s linear forwards
+}
+.confetti{
+  position:fixed;top:-20px;width:9px;height:14px;z-index:9999;
+  animation:fall 3s linear forwards;pointer-events:none
+}
+@keyframes flicker{to{transform:scale(1.15) rotate(4deg)}}
+@keyframes pulse{50%{transform:scale(1.12)}}
+@keyframes float{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media(max-width:800px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:550px){
+  section{padding:65px 5%}
+  .nav{justify-content:flex-start}
+  .card,.dua-card{padding:30px 20px}
+  .grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .memory{height:180px;font-size:14px}
+  .cake-box{transform:scale(.85);margin-bottom:-35px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="welcome">
+  <div class="welcome-box">
+    <div class="emoji">🎂✨</div>
+    <small>A LITTLE BIRTHDAY SURPRISE</small>
+    <h1>Tehzeeba 💕</h1>
+    <p>
+      A little website filled with love, duas, beautiful wishes,
+      memories and a very special birthday surprise.
+    </p>
+    <button class="btn" id="start">✨ Open Your Surprise ✨</button>
+  </div>
+</div>
+
+<div id="site">
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="tiny">TODAY IS ALL ABOUT YOU</div>
+    <h1>Happy Birthday <span>Tehzeeba</span> 🎂</h1>
+    <p>
+      May your special day be filled with happiness, laughter,
+      love, beautiful memories and countless blessings. 💗
+    </p>
+    <a class="btn" href="#cake">🎂 See Your Cake</a>
+  </div>
+</section>
+
+<nav class="nav">
+  <a href="#home">Home</a>
+  <a href="#message">Message</a>
+  <a href="#cake">Cake</a>
+  <a href="#dua">Dua</a>
+  <a href="#memories">Memories</a>
+  <a href="#surprise">Surprise</a>
+</nav>
+
+<section id="message">
+  <div class="heading">
+    <div class="icon">💌</div>
+    <small>A LITTLE MESSAGE</small>
+    <h2>For Someone <span>Special</span></h2>
+  </div>
+  <div class="card">
+    <p>Dear Tehzeeba, 💕</p>
+    <p>
+      Today is more than just another date on the calendar.
+      It is a day to celebrate YOU — your smile, your kindness,
+      your memories and all the happiness you bring to the people around you.
+    </p>
+    <p>
+      I hope this new year of your life brings you closer to every
+      beautiful dream in your heart. May you always have people around
+      you who genuinely care about you, support you and make you smile.
+    </p>
+    <p>
+     Close your eyes, make your heart's most beautiful dua,
+and let Allah take care of the rest. 🤲
+    </p>
+    <p class="signature">
+      With lots of love,<br><b>Someone wishing you the very best always 💗</b>
+    </p>
+  </div>
+</section>
+
+<section id="cake">
+  <div class="heading">
+    <div class="icon">🎂</div>
+    <small>MAKE A WISH</small>
+    <h2>Your Birthday <span>Cake</span></h2>
+  </div>
+
+  <div class="cake-box">
+    <div class="candles">
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+
+    <div class="cake">
+      <div class="layer top"></div>
+      <div class="layer"></div>
+      <div class="layer"></div>
+      <div class="plate"></div>
+    </div>
+  </div>
+
+  <p>🕯️ Make a wish and blow out the candles!</p>
+  <button class="btn" id="blow">💨 Blow Out Candles</button>
+  <div id="wish">Your wish is waiting... ✨</div>
+</section>
+
+<section class="dua" id="dua">
+  <div class="heading">
+    <div class="icon">🤲</div>
+    <small>A SPECIAL PRAYER</small>
+    <h2>Birthday <span>Dua</span></h2>
+  </div>
+
+  <div class="dua-card">
+    <div>☾ ✨ ☽</div>
+    <p class="arabic">
+      اللَّهُمَّ بَارِكْ لَهَا فِي عُمْرِهَا،
+      وَاحْفَظْهَا مِنْ كُلِّ سُوءٍ،
+      وَارْزُقْهَا السَّعَادَةَ وَالصِّحَّةَ
+      وَالسَّكِينَةَ وَالْبَرَكَةَ،
+      وَحَقِّقْ لَهَا مَا تَتَمَنَّى،
+      وَاجْعَلْ أَيَّامَهَا جَمِيلَةً وَمُبَارَكَةً۔
+    </p>
+    <p>
+      Ya Allah, bless her life with goodness, protect her from every harm,
+      grant her health, happiness, peace and barakah.
+    </p>
+    <p>
+      May her dreams come true when they are good for her, guide her
+      towards what is best, surround her with sincere people and place
+      peace in her heart.
+    </p>
+    <p><b>Ameen. 🤲</b></p>
+  </div>
+</section>
+
+<section class="wishes">
+  <div class="heading">
+    <div class="icon">💖</div>
+    <small>FROM THE HEART</small>
+    <h2>Wishes For <span>You</span></h2>
+  </div>
+
+  <div class="grid">
+    <div class="wish"><div>🌸</div><h3>Happiness</h3><p>May your heart always have a reason to smile.</p></div>
+    <div class="wish"><div>✨</div><h3>Success</h3><p>May Allah open beautiful doors of opportunity for you.</p></div>
+    <div class="wish"><div>🤍</div><h3>Peace</h3><p>May your heart always be surrounded by peace and comfort.</p></div>
+    <div class="wish"><div>🌙</div><h3>Barakah</h3><p>May Allah put endless barakah in your life.</p></div>
+    <div class="wish"><div>🌷</div><h3>Beautiful Days</h3><p>May every tomorrow bring something beautiful.</p></div>
+    <div class="wish"><div>💫</div><h3>Dreams</h3><p>May your dreams become beautiful realities.</p></div>
+  </div>
+</section>
+
+<section class="memories" id="memories">
+  <div class="heading">
+    <div class="icon">📸</div>
+    <small>THE GOOD TIMES</small>
+    <h2>Beautiful <span>Memories</span></h2>
+  </div>
+
+  <p style="text-align:center;max-width:650px;margin:-20px auto 40px;line-height:1.8">
+    Some moments become memories, and some memories become little
+    pieces of happiness we carry forever. 💕
+  </p>
+
+  <div class="gallery">
+    <div class="memory">📷<br><br>Our beautiful memory 💕</div>
+    <div class="memory">📷<br><br>Smiles worth remembering ✨</div>
+    <div class="memory">📷<br><br>One of those happy days 🌸</div>
+    <div class="memory">📷<br><br>A memory to keep forever 🤍</div>
+  </div>
+</section>
+
+<section class="surprise" id="surprise">
+  <div style="font-size:70px">🎁</div>
+  <small>THERE'S SOMETHING WAITING FOR YOU</small>
+  <h2>Ready for a <span>Surprise?</span></h2>
+  <p style="margin:20px">Because birthdays deserve more than just “Happy Birthday”. 💕</p>
+  <button class="btn" id="surpriseBtn">🎀 Open My Surprise</button>
+
+  <div class="hidden" id="surpriseBox">
+    <div class="heart">💗</div>
+    <h3>Tehzeeba, you are loved! 🥹</h3>
+    <p>
+      No matter how many birthdays come and go, always remember that
+      you are one of the beautiful reasons someone somewhere smiles.
+    </p>
+    <p>
+      May Allah protect your smile, your heart, your dreams and your happiness.
+    </p>
+    <h2>HAPPY BIRTHDAY TEHZEEBA! 🎂🎉💖</h2>
+  </div>
+</section>
+
+<footer>
+  Made with 💗 especially for Tehzeeba<br>
+  May Allah keep you happy, healthy and protected always. Ameen. 🤲
+</footer>
+
+</div>
+
+<div id="confetti"></div>
+
+<script>
+const welcome=document.getElementById("welcome");
+const site=document.getElementById("site");
+
+document.getElementById("start").onclick=()=>{
+  welcome.classList.add("hide");
+  site.classList.add("show");
+  document.body.style.overflowY="auto";
+  hearts(15);
+  confetti(80);
+};
+
+function hearts(n=10){
+  const icons=["💗","💕","💖","💓","♡","♥"];
+  for(let i=0;i<n;i++){
+    setTimeout(()=>{
+      const h=document.createElement("div");
+      h.className="heart";
+      h.textContent=icons[Math.floor(Math.random()*icons.length)];
+      h.style.left=Math.random()*100+"vw";
+      h.style.fontSize=15+Math.random()*25+"px";
+      h.style.animationDuration=4+Math.random()*4+"s";
+      document.body.appendChild(h);
+      setTimeout(()=>h.remove(),8000);
+    },i*150);
+  }
+}
+
+function confetti(n=80){
+  const box=document.getElementById("confetti");
+  const colors=["#ff8fb3","#ffc857","#b892ff","#7dd3fc","#86efac","#fff","#f9a8d4"];
+  for(let i=0;i<n;i++){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.left=Math.random()*100+"vw";
+    c.style.background=colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDelay=Math.random()+"s";
+    c.style.transform=`rotate(${Math.random()*360}deg)`;
+    box.appendChild(c);
+    setTimeout(()=>c.remove(),6000);
+  }
+}
+
+let blown=false;
+document.getElementById("blow").onclick=()=>{
+  if(blown)return;
+  blown=true;
+  document.querySelectorAll(".candle").forEach((c,i)=>{
+    setTimeout(()=>c.classList.add("off"),i*150);
+  });
+  document.getElementById("wish").textContent="✨May Allah, bless u with a long, beautiful and meaningful life. Fill her years with happiness, peace, good health and countless blessings. Protect her from every difficulty, sadness and harm, and always keep her under Your protection. Ameen. 🤲 ✨";
+  document.getElementById("blow").textContent="💖 Wish Made!";
+  confetti(120);
+  hearts(20);
+};
+
+document.getElementById("surpriseBtn").onclick=()=>{
+  const box=document.getElementById("surpriseBox");
+  box.classList.toggle("show");
+  document.getElementById("surpriseBtn").textContent=
+    box.classList.contains("show") ? "💗 Surprise Opened!" : "🎀 Open My Surprise";
+  if(box.classList.contains("show")){
+    confetti(100);
+    hearts(20);
+    box.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+};
+
+setInterval(()=>{if(site.classList.contains("show"))hearts(5)},10000);
+</script>
+
+</body>
+</html>
